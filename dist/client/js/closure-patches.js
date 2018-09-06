@@ -4,7 +4,6 @@
  * @param {string} value The style attribute value.
  * @return {!Object} Map of CSS properties to string values.
  */
-goog.DEBUG = false;
 goog.style.parseStyleAttribute = function(value) {
   var splitStyleAttributeOnSemicolonsRe_ = /[;]+(?=(?:(?:[^"]*"){2})*[^"]*$)(?=(?:(?:[^']*'){2})*[^']*$)(?=(?:[^()]*\([^()]*\))*[^()]*$)/;
   var styleArray = value.split(splitStyleAttributeOnSemicolonsRe_);
