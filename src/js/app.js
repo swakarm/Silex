@@ -71,8 +71,7 @@ goog.require('silex.view.dialog.FileExplorer');
 goog.require('silex.view.dialog.HtmlEditor');
 goog.require('silex.view.dialog.JsEditor');
 goog.require('silex.view.dialog.SettingsDialog');
-goog.require('silex.view.dialog.NewWebsiteDialog');
-goog.require('silex.view.dialog.TextEditor');
+goog.require('silex.view.dialog.Dashboard');
 
 goog.require('silex.view.ModalDialog');
 
@@ -151,7 +150,7 @@ class App {
     this.view.contextMenu.buildUi();
     this.view.breadCrumbs.buildUi();
     this.view.pageTool.buildUi();
-    this.view.newWebsiteDialog.buildUi();
+    this.view.dashboard.buildUi();
     this.view.propertyTool.buildUi();
 
 
@@ -255,20 +254,15 @@ class App {
     /** @type {JsEditor} */
     var jsEditor = new JsEditor(jsEditorElement, this.model, this.controller);
 
-    // TextEditor
-    var textEditorElement = /** @type {!Element} */ (goog.dom.getElementByClass('silex-text-editor'));
-    /** @type {TextEditor} */
-    var textEditor = new TextEditor(textEditorElement, this.model, this.controller);
-
     // SettingsDialog
     var settingsDialogElement = /** @type {!Element} */ (goog.dom.getElementByClass('silex-settings-dialog'));
     /** @type {SettingsDialog} */
     var settingsDialog = new SettingsDialog(settingsDialogElement, this.model, this.controller);
 
-    // NewWebsiteDialog
-    var newWebsiteDialogElement = /** @type {!Element} */ (goog.dom.getElementByClass('silex-newwebsite-dialog'));
-    /** @type {NewWebsiteDialog} */
-    var newWebsiteDialog = new NewWebsiteDialog(newWebsiteDialogElement, this.model, this.controller);
+    // Dashboard
+    var dashboardElement = /** @type {!Element} */ (goog.dom.getElementByClass('silex-dashboard'));
+    /** @type {Dashboard} */
+    var dashboard = new Dashboard(dashboardElement, this.model, this.controller);
 
     // FileExplorer
     var fileExplorerElement = /** @type {!Element} */ (document.getElementById('silex-file-explorer'));
@@ -305,10 +299,9 @@ class App {
         htmlEditor,
         cssEditor,
         jsEditor,
-        textEditor,
         fileExplorer,
         settingsDialog,
-        newWebsiteDialog,
+        dashboard,
         propSplitter,
         workspace
     );

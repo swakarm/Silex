@@ -225,10 +225,9 @@ silex.types.View = function() {
  * @param {HtmlEditor} htmlEditor
  * @param {CssEditor} cssEditor
  * @param {JsEditor} jsEditor
- * @param {TextEditor} textEditor
  * @param {FileExplorer} fileExplorer
  * @param {SettingsDialog} settingsDialog
- * @param {NewWebsiteDialog} newWebsiteDialog
+ * @param {Dashboard} dashboard
  * @param {silex.view.Splitter} propSplitter
  * @param {silex.view.Workspace} workspace
  */
@@ -242,10 +241,9 @@ silex.types.View.prototype.init = function(
     htmlEditor,
     cssEditor,
     jsEditor,
-    textEditor,
     fileExplorer,
     settingsDialog,
-    newWebsiteDialog,
+    dashboard,
     propSplitter,
     workspace) {
   /**
@@ -285,10 +283,6 @@ silex.types.View.prototype.init = function(
    */
   this.jsEditor = jsEditor;
   /**
-   * @type {TextEditor}
-   */
-  this.textEditor = textEditor;
-  /**
    * @type {FileExplorer}
    */
   this.fileExplorer = fileExplorer;
@@ -297,9 +291,9 @@ silex.types.View.prototype.init = function(
    */
   this.settingsDialog = settingsDialog;
   /**
-   * @type {NewWebsiteDialog}
+   * @type {Dashboard}
    */
-  this.newWebsiteDialog = newWebsiteDialog;
+  this.dashboard = dashboard;
   /**
    * @type {silex.view.Splitter}
    */
